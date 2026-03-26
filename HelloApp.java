@@ -3,12 +3,14 @@ public class Hello {
         if (args.length == 0) {
             System.out.println("Hello, World!");
         } else {
-            StringBuilder sb = new StringBuilder();
-            for (String name : args) {
-                sb.append(name).append(", ");
+            String result = "";
+            for (int i = 0; i < args.length; i++) {
+                if (i == 0) {
+                    result = args[i];
+                } else {
+                    result = result + ", " + args[i];
+                }
             }
-            // Remove trailing ", " using substring
-            String result = sb.substring(0, sb.length() - 2);
             System.out.println("Hello, " + result + "!");
         }
     }
